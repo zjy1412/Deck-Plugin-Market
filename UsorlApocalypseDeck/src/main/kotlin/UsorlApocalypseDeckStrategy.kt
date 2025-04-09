@@ -50,6 +50,10 @@ class UsorlApocalypseDeckStrategy : DeckStrategy() {
      * 对快攻保留：潜水俯冲鹈鹕、深潜炸弹
      */
     override fun executeChangeCard(cards: HashSet<Card>) {
+        // Reset game-specific flags at the start of a new game (mulligan phase)
+        courtOrderPlayed = false
+        nozdormuPlayed = false
+
         val toList = cards.toList()
 
         // 需要保留的卡牌ID
